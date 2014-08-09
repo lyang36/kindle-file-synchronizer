@@ -1,0 +1,11 @@
+{
+	"items": [
+              {
+              "name": "FileSyncer",
+              "priority": 1,
+              "items": [
+                        {"name": "Sync", "priority": 0, "action": "bin/update.sh"}
+                        ]
+              }
+              ]
+}
