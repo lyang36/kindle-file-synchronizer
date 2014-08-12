@@ -22,13 +22,17 @@ ctr=`echo $line | cut -d " " -f 3`
 echo Downloading $src to $des
 
 if [ ! -z $ctr ]; then
-if [ $ctr != "-r" ]; then
-if [ ! -a $des ]; then
-curl -o $des $src
-fi
-fi
+    if [ $ctr != "-r" ]; then
+        if [ ! -a $des ]; then
+            curl -o $des $src
+        fi
+    else
+        curl -o $des $src
+    fi
 else
-curl -o $des $src
+    if [ ! -a $des ]; then
+        curl -o $des $src
+    fi
 fi
 
 done
